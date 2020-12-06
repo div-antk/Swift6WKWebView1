@@ -6,14 +6,23 @@
 //
 
 import UIKit
+import WebKit
 
 class ViewController: UIViewController {
 
+  @IBOutlet weak var indicator: UIActivityIndicatorView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
   }
 
-
+  @IBAction func back(_ sender: Any) {
+  }
+  
+  
+  @IBAction func go(_ sender: Any) {
+  }
+  
 }
 
