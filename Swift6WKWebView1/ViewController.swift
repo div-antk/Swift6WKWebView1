@@ -53,11 +53,12 @@ class ViewController: UIViewController,WKNavigationDelegate {
   }
   
   @IBAction func back(_ sender: Any) {
+    webView.goBack()
   }
   
   
   @IBAction func go(_ sender: Any) {
+    webView.goForward()
   }
-  
 }
 
