@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,WKNavigationDelegate {
 
   @IBOutlet weak var indicator: UIActivityIndicatorView!
   
@@ -26,9 +26,32 @@ class ViewController: UIViewController {
   
     view.addSubview(webView)
     
+    webView.navigationDelegate = self
+    
     // URLをロード
+    let url = URL(string: "https://www.hodinkee.jp")
+    let request = URLRequest(url: url!)
+    webView.load(request)
+    
+    // 値が小さいほど奥のレイヤーになる
+    indicator.layer.zPosition = 2
   }
 
+  func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    
+    // ロードが完了したときに呼ばれるデリゲートメソッド
+    indicator.isHidden = true
+    indicator.stopAnimating()
+    
+  }
+  
+  func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+    
+    // 読み込みが開始されたときに呼ばれるデリゲートメソッド
+    indicator.isHidden = false
+    indicator.startAnimating()
+  }
+  
   @IBAction func back(_ sender: Any) {
   }
   
