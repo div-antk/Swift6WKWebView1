@@ -12,9 +12,21 @@ class ViewController: UIViewController {
 
   @IBOutlet weak var indicator: UIActivityIndicatorView!
   
+  var webView = WKWebView()
+  
+  @IBOutlet weak var toolBar: UIToolbar!
+ 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+
+    indicator.isHidden = true
+    
+    // 大きさを決める
+    webView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height - toolBar.frame.size.height)
+  
+    view.addSubview(webView)
+    
+    // URLをロード
   }
 
   @IBAction func back(_ sender: Any) {

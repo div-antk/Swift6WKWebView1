@@ -43,6 +43,7 @@
                     </view>
                     <connections>
                         <outlet property="indicator" destination="QEe-U1-Hd3" id="xBZ-Yk-FtP"/>
+                        <outlet property="toolBar" destination="wfO-G1-jOg" id="vqO-qU-pmT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
